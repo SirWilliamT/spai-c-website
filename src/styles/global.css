@@ -1,0 +1,46 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&family=Oxanium:wght@200..800&family=Inter:wght@300;400;600&display=swap');
+
+@theme {
+  --font-audiowide: "Audiowide", cursive;
+  --font-oxanium: "Oxanium", system-ui, sans-serif;
+  --font-inter: "Inter", system-ui, sans-serif;
+  --color-space-black: #050505;
+  --color-space-deep: #0a0a12;
+  --color-accent: #a855f7;
+}
+
+body {
+  background-color: #050505;
+  color: #ffffff;
+  font-family: "Inter", system-ui, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3, .font-audiowide {
+  font-family: "Audiowide", cursive;
+  letter-spacing: 0.05em;
+}
+
+.font-oxanium {
+  font-family: "Oxanium", system-ui, sans-serif;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #050505;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #333;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a855f7;
+}

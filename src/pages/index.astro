@@ -1,0 +1,74 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { Image } from 'astro:assets';
+import albumArt from '../assets/escape-velocity.jpg';
+
+const tracklist = [
+  "Orbit Initialization",
+  "Cosmic Drift",
+  "Nebula Whispers",
+  "Escape Velocity",
+  "Event Horizon",
+  "Star-Crossed Signals",
+  "Zero Gravity Love",
+  "Pulsar Beats",
+  "Stardust Memory",
+  "Void Echoes"
+];
+---
+
+<Layout title="Home">
+	<section class="min-h-[90vh] flex flex-col items-center justify-center px-6 py-20 relative overflow-hidden">
+		<!-- Background elements -->
+		<div class="absolute top-0 left-0 w-full h-full -z-10 opacity-20">
+			<div class="absolute top-1/4 left-1/4 w-96 h-96 bg-accent rounded-full blur-[128px]"></div>
+			<div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-blue-600 rounded-full blur-[128px]"></div>
+		</div>
+
+		<div class="max-w-6xl w-full grid md:grid-cols-2 gap-12 items-center">
+			<!-- Album Art -->
+			<div class="relative group">
+				<div class="absolute -inset-1 bg-gradient-to-r from-accent to-blue-600 rounded-lg blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
+				<div class="relative bg-space-black rounded-lg overflow-hidden shadow-2xl">
+					<Image 
+						src={albumArt} 
+						alt="Escape Velocity Album Art" 
+						class="w-full h-auto object-cover transform transition-transform duration-700 group-hover:scale-105"
+					/>
+				</div>
+			</div>
+
+			<!-- Album Info -->
+			<div class="flex flex-col space-y-8">
+				<div>
+					<span class="text-accent font-oxanium tracking-[0.3em] uppercase text-sm mb-2 block">Latest Release</span>
+					<h1 class="text-5xl md:text-7xl font-audiowide mb-4 leading-tight">Escape Velocity</h1>
+					<p class="text-lg text-white/70 font-inter leading-relaxed max-w-xl">
+						SpAi-C's debut transmission into the digital ether. A sonic exploration of the space between algorithms and human emotion, "Escape Velocity" blends ethereal synths with heavy, pulsar-driven rhythms.
+					</p>
+				</div>
+
+				<div class="space-y-4">
+					<h3 class="font-oxanium uppercase tracking-widest text-white/50 text-sm border-b border-white/10 pb-2">Tracklist</h3>
+					<ol class="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-2 font-oxanium text-sm">
+						{tracklist.map((track, index) => (
+							<li class="flex items-center space-x-3 group">
+								<span class="text-accent/40 group-hover:text-accent transition-colors">{(index + 1).toString().padStart(2, '0')}</span>
+								<span class="text-white/80 group-hover:text-white transition-colors">{track}</span>
+							</li>
+						))}
+					</ol>
+				</div>
+
+				<div class="pt-4">
+					<a 
+						href="#" 
+						class="inline-block bg-white text-space-black font-oxanium font-bold px-8 py-4 rounded-full hover:bg-accent hover:text-white transition-all transform hover:-translate-y-1 active:scale-95 tracking-widest uppercase text-sm"
+					>
+						Listen Now
+					</a>
+				</div>
+			</div>
+		</div>
+	</section>
+</Layout>

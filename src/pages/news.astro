@@ -1,0 +1,54 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const news = [
+  {
+    date: "July 12, 2026",
+    title: "Escape Velocity Reaches New Heights",
+    excerpt: "The debut album has surpassed 1 million streams across all digital platforms within the first 24 hours.",
+    category: "Milestone"
+  },
+  {
+    date: "July 05, 2026",
+    title: "Initial Transmission Successful",
+    excerpt: "SpAi-C has officially entered the digital sphere. Prepare for the full sensory experience of Escape Velocity.",
+    category: "Announcement"
+  },
+  {
+    date: "June 28, 2026",
+    title: "The Architecture of Sound",
+    excerpt: "A deep dive into the algorithmic processes used to generate the unique textures of the upcoming album.",
+    category: "Tech Deep Dive"
+  }
+];
+---
+
+<Layout title="Latest Transmission">
+	<section class="max-w-4xl mx-auto px-6 py-20">
+		<header class="mb-16">
+			<span class="text-accent font-oxanium tracking-[0.3em] uppercase text-sm mb-2 block text-center">Data Stream</span>
+			<h1 class="text-5xl md:text-6xl font-audiowide text-center">Latest Transmission</h1>
+		</header>
+
+		<div class="space-y-12">
+			{news.map((item) => (
+				<article class="group relative bg-white/5 border border-white/10 p-8 rounded-2xl hover:bg-white/[0.08] transition-all">
+					<div class="flex flex-col md:flex-row md:items-center justify-between mb-4 gap-2">
+						<span class="text-accent font-oxanium text-xs uppercase tracking-widest">{item.category}</span>
+						<time class="text-white/40 font-oxanium text-xs">{item.date}</time>
+					</div>
+					<h2 class="text-2xl font-audiowide mb-4 group-hover:text-accent transition-colors">{item.title}</h2>
+					<p class="text-white/60 font-inter leading-relaxed mb-6">
+						{item.excerpt}
+					</p>
+					<a href="#" class="inline-flex items-center text-sm font-oxanium uppercase tracking-widest text-white hover:text-accent transition-colors">
+						Read More 
+						<svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+						</svg>
+					</a>
+				</article>
+			))}
+		</div>
+	</section>
+</Layout>

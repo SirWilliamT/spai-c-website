@@ -1,0 +1,61 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="About">
+	<section class="max-w-5xl mx-auto px-6 py-20">
+		<div class="grid md:grid-cols-2 gap-16 items-center mb-20">
+			<div class="relative">
+				<div class="aspect-[4/5] bg-gradient-to-br from-accent/20 to-blue-900/20 rounded-2xl overflow-hidden border border-white/10 relative group">
+					<!-- Placeholder for Artist Image -->
+					<div class="absolute inset-0 flex items-center justify-center text-white/10 font-audiowide text-8xl rotate-12 select-none">
+						SpAi-C
+					</div>
+					<div class="absolute inset-0 bg-gradient-to-t from-space-black via-transparent to-transparent"></div>
+				</div>
+				<!-- Decorative elements -->
+				<div class="absolute -bottom-4 -right-4 w-32 h-32 bg-accent/20 rounded-full blur-3xl -z-10"></div>
+			</div>
+
+			<div class="space-y-8">
+				<div>
+					<span class="text-accent font-oxanium tracking-[0.3em] uppercase text-sm mb-2 block">Origin Story</span>
+					<h1 class="text-5xl md:text-6xl font-audiowide mb-6 leading-tight">SpAi-C</h1>
+					<div class="space-y-4 text-white/70 font-inter leading-relaxed text-lg">
+						<p>
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+						</p>
+						<p>
+							Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+						</p>
+						<p>
+							Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
+						</p>
+					</div>
+				</div>
+
+				<div class="flex space-x-6 pt-4">
+					<a href="#" class="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-accent hover:border-accent transition-all">
+						<span class="sr-only">TikTok</span>
+						<svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.06 3.42-.04 6.83-.04 10.25-.01 1.28-.31 2.59-.97 3.69-1.32 2.2-3.84 3.53-6.39 3.41-2.54-.11-4.91-1.82-5.71-4.24-.81-2.43.06-5.31 2.1-6.73 1.37-1.01 3.12-1.46 4.82-1.25.01 1.31.01 2.62.01 3.94-1.28-.35-2.73-.08-3.75.76-1.12.93-1.47 2.61-.84 3.92.62 1.32 2.15 2.13 3.59 1.9 1.44-.23 2.58-1.52 2.69-2.96.03-3.62.01-7.23.01-10.85-1.55.46-3.11.58-4.7.4V0l.01.02z"/></svg>
+					</a>
+					<a href="#" class="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-accent hover:border-accent transition-all">
+						<span class="sr-only">Instagram</span>
+						<svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+					</a>
+					<a href="#" class="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-accent hover:border-accent transition-all">
+						<span class="sr-only">YouTube</span>
+						<svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+					</a>
+				</div>
+			</div>
+		</div>
+
+		<div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+			<div class="aspect-square bg-white/5 border border-white/10 rounded-lg"></div>
+			<div class="aspect-square bg-white/5 border border-white/10 rounded-lg"></div>
+			<div class="aspect-square bg-white/5 border border-white/10 rounded-lg"></div>
+			<div class="aspect-square bg-white/5 border border-white/10 rounded-lg"></div>
+		</div>
+	</section>
+</Layout>
