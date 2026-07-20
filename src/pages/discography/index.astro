@@ -13,7 +13,7 @@ import { albums } from '../../data/albums';
 
 		<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
 			{albums.map((album) => (
-				<a href={`${import.meta.env.BASE_URL}/discography/${album.id}`} class="group">
+				<a href={`/discography/${album.id}`} class="group">
 					<div class="relative aspect-square overflow-hidden rounded-lg mb-4 bg-white/5 border border-white/10">
 						<Image 
 							src={album.art} 
