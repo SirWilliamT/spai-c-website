@@ -23,6 +23,12 @@ This guide walks you through deploying the SpAi-C website to GitHub Pages.
    });
    ```
 
+**Important Note on Local Testing:**
+Because the project is configured with `base: '/spai-c-website'`, the local development server will serve the site at:
+`http://localhost:4321/spai-c-website/`
+
+If you try to access `http://localhost:4321/`, you will see a 404. Always use the full path including `/spai-c-website/` for local testing.
+
 ### Step 3: Push to GitHub
 
 ```bash
@@ -55,198 +61,37 @@ Your website will be live at:
 https://yourusername.github.io/spai-c-website
 ```
 
-It may take 1-2 minutes for the first deployment. Refresh after a minute if you see a 404.
+---
+
+## Troubleshooting Deployment Errors
+
+### "Deprecated actions/upload-artifact: v3"
+If you see this error, ensure your `.github/workflows/deploy.yml` uses `actions/upload-pages-artifact@v3` and `actions/deploy-pages@v4`. The latest version of this project already includes these fixes.
+
+### "404 Not Found" on Links
+If links aren't working:
+1. Ensure you are using `import.meta.env.BASE_URL` in your Astro files for all internal links.
+2. Check that the `base` in `astro.config.mjs` matches your GitHub repository name exactly.
 
 ---
 
 ## Configuration Before Deployment
 
 ### 1. Update Social Media Links
-
-**File**: `src/layouts/Layout.astro` (footer)
-
-Replace the `#` placeholders with actual URLs:
-```html
-<a href="https://tiktok.com/@spai_c">TikTok</a>
-<a href="https://threads.net/@spai_c">Threads</a>
-<a href="https://youtube.com/@spai_c">YouTube</a>
-<a href="https://x.com/spai_c">X</a>
-<a href="https://instagram.com/spai_c">Instagram</a>
-```
-
-**File**: `src/pages/about.astro` (social icons)
-
-Update the `href="#"` values in the social media links section.
+**File**: `src/layouts/Layout.astro` (footer) and `src/pages/about.astro`
 
 ### 2. Set Up Contact Form (Formspree)
-
-1. Visit [formspree.io](https://formspree.io)
-2. Sign up for a free account
-3. Create a new form
-4. Copy your form ID (looks like: `f/abc123xyz`)
-5. Open `src/pages/contact.astro`
-6. Find the form tag and update:
-   ```html
-   <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
-   ```
+**File**: `src/pages/contact.astro`
 
 ### 3. Add Streaming Links
-
-**File**: `src/pages/index.astro` (Home page)
-
-Update the "Listen Now" button:
-```html
-<a href="https://spotify.com/album/..." class="...">
-  Listen Now
-</a>
-```
-
-**File**: `src/pages/discography/[id].astro` (Album detail)
-
-Update the platform links array:
-```javascript
-const album = {
-  // ...
-  links: [
-    { name: "Spotify", url: "https://spotify.com/album/..." },
-    { name: "Apple Music", url: "https://music.apple.com/..." },
-    { name: "Bandcamp", url: "https://bandcamp.com/..." },
-    { name: "YouTube Music", url: "https://music.youtube.com/..." }
-  ]
-};
-```
-
----
-
-## Updating Content After Deployment
-
-### Add News/Announcements
-
-Edit `src/pages/news.astro` and add to the `news` array:
-```javascript
-const news = [
-  {
-    date: "July 20, 2026",
-    title: "New Single Released",
-    excerpt: "Check out the latest track...",
-    category: "Release"
-  },
-  // ... existing news
-];
-```
-
-Then push to GitHub:
-```bash
-git add .
-git commit -m "Add new news post"
-git push
-```
-
-The site will automatically rebuild and deploy.
-
-### Update Album Information
-
-Edit `src/pages/index.astro` to change:
-- Album title and description
-- Tracklist
-- Album artwork (replace the image file)
-
-### Update Artist Bio
-
-Edit `src/pages/about.astro` to replace the Lorem Ipsum with actual biography.
-
----
-
-## Troubleshooting
-
-### Site shows 404 after deployment
-
-**Cause**: Incorrect `base` path in `astro.config.mjs`
-
-**Solution**: 
-1. Verify your repository name is `spai-c-website`
-2. Verify `base: '/spai-c-website'` in `astro.config.mjs`
-3. Redeploy by pushing a commit
-
-### Changes not showing up
-
-**Cause**: GitHub Pages cache or workflow still running
-
-**Solution**:
-1. Wait 2-3 minutes for the workflow to complete
-2. Check the "Actions" tab in your repository
-3. Hard refresh your browser (Ctrl+Shift+R or Cmd+Shift+R)
-
-### Contact form not working
-
-**Cause**: Formspree ID not set or incorrect
-
-**Solution**:
-1. Verify your form ID in `src/pages/contact.astro`
-2. Test at [formspree.io](https://formspree.io) dashboard
-3. Make sure form ID is correct format: `f/abc123xyz`
-
-### Images not loading
-
-**Cause**: Image path issues
-
-**Solution**:
-1. Ensure album art is at `src/assets/escape-velocity.jpg`
-2. Run `pnpm build` locally to test
-3. Check browser console for 404 errors
+**File**: `src/pages/index.astro` and `src/pages/discography/[id].astro`
 
 ---
 
 ## Local Development
 
-To test changes before pushing to GitHub:
-
 ```bash
-# Install dependencies (first time only)
 pnpm install
-
-# Start development server
 pnpm dev
-
-# Open http://localhost:4321/spai-c-website
+# Open http://localhost:4321/spai-c-website/
 ```
-
-To build for production:
-```bash
-pnpm build
-pnpm preview
-```
-
----
-
-## Custom Domain (Optional)
-
-To use a custom domain instead of `yourusername.github.io/spai-c-website`:
-
-1. Purchase a domain (e.g., `spai-c.com`)
-2. In your repository Settings → Pages
-3. Add your custom domain
-4. Follow DNS configuration instructions
-5. Update `site` in `astro.config.mjs` to your domain
-
----
-
-## Performance Tips
-
-- Images are automatically optimized to WebP
-- CSS and JS are minified
-- Static hosting is extremely fast
-- Use GitHub Pages CDN for global distribution
-
----
-
-## Support
-
-For issues or questions:
-- Check [Astro docs](https://docs.astro.build)
-- Review [GitHub Pages docs](https://docs.github.com/en/pages)
-- Contact: licensing@spai-c.com
-
----
-
-**You're all set!** 🚀 Your SpAi-C website is ready to launch.

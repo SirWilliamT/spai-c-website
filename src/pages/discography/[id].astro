@@ -1,45 +1,21 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import { Image } from 'astro:assets';
-import albumArt from '../../assets/escape-velocity.jpg';
+import { albums } from '../../data/albums';
 
 export function getStaticPaths() {
-  return [
-    { params: { id: 'escape-velocity' } },
-  ];
+  return albums.map(album => ({
+    params: { id: album.id },
+    props: { album },
+  }));
 }
 
-const { id } = Astro.params;
-
-// For now, we only have one album
-const album = {
-  title: "Escape Velocity",
-  year: "2026",
-  description: "SpAi-C's debut transmission into the digital ether. A sonic exploration of the space between algorithms and human emotion, 'Escape Velocity' blends ethereal synths with heavy, pulsar-driven rhythms.",
-  tracklist: [
-    "Orbit Initialization",
-    "Cosmic Drift",
-    "Nebula Whispers",
-    "Escape Velocity",
-    "Event Horizon",
-    "Star-Crossed Signals",
-    "Zero Gravity Love",
-    "Pulsar Beats",
-    "Stardust Memory",
-    "Void Echoes"
-  ],
-  links: [
-    { name: "Spotify", url: "#" },
-    { name: "Apple Music", url: "#" },
-    { name: "Bandcamp", url: "#" },
-    { name: "YouTube Music", url: "#" }
-  ]
-};
+const { album } = Astro.props;
 ---
 
 <Layout title={album.title}>
 	<section class="max-w-6xl mx-auto px-6 py-20">
-		<a href="/discography" class="inline-flex items-center text-sm font-oxanium uppercase tracking-widest text-white/40 hover:text-accent transition-colors mb-12">
+		<a href={`${import.meta.env.BASE_URL}/discography`} class="inline-flex items-center text-sm font-oxanium uppercase tracking-widest text-white/40 hover:text-accent transition-colors mb-12">
 			<svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
 				<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16l-4-4m0 0l4-4m-4 4h18" />
 			</svg>
@@ -50,7 +26,7 @@ const album = {
 			<div>
 				<div class="bg-white/5 border border-white/10 rounded-lg overflow-hidden shadow-2xl sticky top-32">
 					<Image 
-						src={albumArt} 
+						src={album.art} 
 						alt={album.title} 
 						class="w-full h-auto"
 					/>
@@ -59,8 +35,8 @@ const album = {
 
 			<div class="space-y-12">
 				<div>
-					<h1 class="text-5xl md:text-6xl font-audiowide mb-4">{album.title}</h1>
-					<p class="text-accent font-oxanium tracking-[0.2em] uppercase text-sm mb-6">{album.year} • Full Album</p>
+					<h1 class="text-5xl md:text-6xl font-oxanium mb-4">{album.title}</h1>
+					<p class="text-accent font-oxanium tracking-[0.2em] uppercase text-sm mb-6">{album.year} • {album.type}</p>
 					<p class="text-white/70 font-inter leading-relaxed text-lg">
 						{album.description}
 					</p>
@@ -73,9 +49,9 @@ const album = {
 							<li class="flex items-center justify-between group py-2 border-b border-white/5 last:border-0">
 								<div class="flex items-center space-x-4">
 									<span class="text-accent/40 group-hover:text-accent transition-colors">{(index + 1).toString().padStart(2, '0')}</span>
-									<span class="text-white group-hover:text-accent transition-colors">{track}</span>
+									<span class="text-white group-hover:text-accent transition-colors">{track.title}</span>
 								</div>
-								<span class="text-white/20 text-xs uppercase tracking-tighter">04:20</span>
+								<span class="text-white/20 text-xs uppercase tracking-tighter">{track.duration}</span>
 							</li>
 						))}
 					</ol>

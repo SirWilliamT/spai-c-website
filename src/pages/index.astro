@@ -1,20 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import { Image } from 'astro:assets';
-import albumArt from '../assets/escape-velocity.jpg';
-
-const tracklist = [
-  "Orbit Initialization",
-  "Cosmic Drift",
-  "Nebula Whispers",
-  "Escape Velocity",
-  "Event Horizon",
-  "Star-Crossed Signals",
-  "Zero Gravity Love",
-  "Pulsar Beats",
-  "Stardust Memory",
-  "Void Echoes"
-];
+import { latestAlbum } from '../data/albums';
 ---
 
 <Layout title="Home">
@@ -31,8 +18,8 @@ const tracklist = [
 				<div class="absolute -inset-1 bg-gradient-to-r from-accent to-blue-600 rounded-lg blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
 				<div class="relative bg-space-black rounded-lg overflow-hidden shadow-2xl">
 					<Image 
-						src={albumArt} 
-						alt="Escape Velocity Album Art" 
+						src={latestAlbum.art} 
+						alt={`${latestAlbum.title} Album Art`} 
 						class="w-full h-auto object-cover transform transition-transform duration-700 group-hover:scale-105"
 					/>
 				</div>
@@ -42,19 +29,19 @@ const tracklist = [
 			<div class="flex flex-col space-y-8">
 				<div>
 					<span class="text-accent font-oxanium tracking-[0.3em] uppercase text-sm mb-2 block">Latest Release</span>
-					<h1 class="text-5xl md:text-7xl font-audiowide mb-4 leading-tight">Escape Velocity</h1>
+					<h1 class="text-5xl md:text-7xl font-oxanium mb-4 leading-tight">{latestAlbum.title}</h1>
 					<p class="text-lg text-white/70 font-inter leading-relaxed max-w-xl">
-						SpAi-C's debut transmission into the digital ether. A sonic exploration of the space between algorithms and human emotion, "Escape Velocity" blends ethereal synths with heavy, pulsar-driven rhythms.
+						{latestAlbum.description}
 					</p>
 				</div>
 
 				<div class="space-y-4">
 					<h3 class="font-oxanium uppercase tracking-widest text-white/50 text-sm border-b border-white/10 pb-2">Tracklist</h3>
 					<ol class="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-2 font-oxanium text-sm">
-						{tracklist.map((track, index) => (
+						{latestAlbum.tracklist.map((track, index) => (
 							<li class="flex items-center space-x-3 group">
 								<span class="text-accent/40 group-hover:text-accent transition-colors">{(index + 1).toString().padStart(2, '0')}</span>
-								<span class="text-white/80 group-hover:text-white transition-colors">{track}</span>
+								<span class="text-white/80 group-hover:text-white transition-colors">{track.title}</span>
 							</li>
 						))}
 					</ol>

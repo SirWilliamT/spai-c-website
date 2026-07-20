@@ -14,7 +14,8 @@ const { title, description = "Official website of SpAi-C - Digital AI Music Arti
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="icon" type="image/svg+xml" href={`${import.meta.env.BASE_URL}/favicon.svg`} />
+		<link rel="icon" type="image/x-icon" href={`${import.meta.env.BASE_URL}/favicon.ico`} />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title} | SpAi-C</title>
 		<meta name="description" content={description} />
@@ -22,16 +23,16 @@ const { title, description = "Official website of SpAi-C - Digital AI Music Arti
 	<body class="bg-space-black text-white selection:bg-accent selection:text-white">
 		<header class="fixed top-0 left-0 w-full z-50 bg-space-black/80 backdrop-blur-md border-b border-white/10">
 			<nav class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-				<a href="/" class="text-2xl font-audiowide text-white hover:text-accent transition-colors">
+				<a href={import.meta.env.BASE_URL} class="text-2xl font-brand text-white hover:text-accent transition-colors">
 					SpAi-C
 				</a>
 				
 				<ul class="hidden md:flex space-x-8 font-oxanium text-sm uppercase tracking-widest">
-					<li><a href="/" class="hover:text-accent transition-colors">Home</a></li>
-					<li><a href="/news" class="hover:text-accent transition-colors">Latest Transmission</a></li>
-					<li><a href="/discography" class="hover:text-accent transition-colors">Discography</a></li>
-					<li><a href="/about" class="hover:text-accent transition-colors">About</a></li>
-					<li><a href="/contact" class="hover:text-accent transition-colors">Contact</a></li>
+					<li><a href={import.meta.env.BASE_URL} class="hover:text-accent transition-colors">Home</a></li>
+					<li><a href={`${import.meta.env.BASE_URL}/news`} class="hover:text-accent transition-colors">Latest Transmission</a></li>
+					<li><a href={`${import.meta.env.BASE_URL}/discography`} class="hover:text-accent transition-colors">Discography</a></li>
+					<li><a href={`${import.meta.env.BASE_URL}/about`} class="hover:text-accent transition-colors">About</a></li>
+					<li><a href={`${import.meta.env.BASE_URL}/contact`} class="hover:text-accent transition-colors">Contact</a></li>
 				</ul>
 
 				<!-- Mobile Menu Button (Simplified for now) -->
@@ -50,16 +51,16 @@ const { title, description = "Official website of SpAi-C - Digital AI Music Arti
 		<footer class="py-12 border-t border-white/10 mt-20 bg-space-deep">
 			<div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-8">
 				<div class="text-center md:text-left">
-					<p class="font-audiowide text-xl mb-2">SpAi-C</p>
+					<p class="font-brand text-xl mb-2">SpAi-C</p>
 					<p class="text-white/50 text-sm font-oxanium tracking-wider">Digital AI Music Artist</p>
 				</div>
 				
 				<div class="flex space-x-6">
-					<a href="#" class="text-white/60 hover:text-white transition-colors">TikTok</a>
-					<a href="#" class="text-white/60 hover:text-white transition-colors">Threads</a>
-					<a href="#" class="text-white/60 hover:text-white transition-colors">YouTube</a>
-					<a href="#" class="text-white/60 hover:text-white transition-colors">X</a>
-					<a href="#" class="text-white/60 hover:text-white transition-colors">Instagram</a>
+					<a href="https://www.tiktok.com/@spai_c" class="text-white/60 hover:text-white transition-colors">TikTok</a>
+					<!--<a href="#" class="text-white/60 hover:text-white transition-colors">Threads</a>-->
+					<a href="https://www.youtube.com/@SpAi-C" class="text-white/60 hover:text-white transition-colors">YouTube</a>
+					<a href="https://x.com/spaicmusic" class="text-white/60 hover:text-white transition-colors">X</a>
+					<a href="https://www.instagram.com/spaicmusic/" class="text-white/60 hover:text-white transition-colors">Instagram</a>
 				</div>
 				
 				<div class="text-white/30 text-xs font-oxanium uppercase tracking-widest">

@@ -1,5 +1,5 @@
-@import "tailwindcss";
 @import url('https://fonts.googleapis.com/css2?family=Audiowide&family=Oxanium:wght@200..800&family=Inter:wght@300;400;600&display=swap');
+@import "tailwindcss";
 
 @theme {
   --font-audiowide: "Audiowide", cursive;
@@ -18,9 +18,18 @@ body {
   padding: 0;
 }
 
-h1, h2, h3, .font-audiowide {
+/* Base headings use Oxanium now */
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Oxanium", system-ui, sans-serif;
+  letter-spacing: 0.05em;
+  text-transform: captialize;
+}
+
+/* Specific class for the brand name */
+.font-brand {
   font-family: "Audiowide", cursive;
   letter-spacing: 0.05em;
+  text-transform: none; /* Keep the SpAi-C casing */
 }
 
 .font-oxanium {
