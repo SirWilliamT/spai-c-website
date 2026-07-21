@@ -8,7 +8,8 @@ const news = [
     excerpt: "SpAi-C's first single Gravi-tea arrives 31 July.",
 	link: "https://distrokid.com/hyperfollow/spaic/gravi-tea",
 	linkText: "🚀 Pre-save now",
-    category: "Announcement"
+    category: "Announcement",
+	readmore: ""
   }
 ];
 ---
@@ -32,7 +33,7 @@ const news = [
 					<p class="text-white/60 font-inter leading-relaxed mb-6">
 						{item.excerpt}
 					</p>
-					{item.link && <a href={item.link}>{item.linkText}</a>}
+					{item.link && <p><a href={item.link}>{item.linkText}</a></p>}
 					<a href="#" class="inline-flex items-center text-sm font-oxanium uppercase tracking-widest text-white hover:text-accent transition-colors">
 						Read More 
 						<svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
