@@ -3,22 +3,12 @@ import Layout from '../layouts/Layout.astro';
 
 const news = [
   {
-    date: "July 20, 2026",
-    title: "Escape Velocity Released",
-    excerpt: "blah blah blah",
-    category: "Milestone"
-  },
-  {
-    date: "July 05, 2026",
-    title: "Initial Transmission Successful",
-    excerpt: "SpAi-C has officially entered the digital sphere. Prepare for the full sensory experience of Escape Velocity.",
+    date: "July 31, 2026",
+    title: "Transmission incoming...",
+    excerpt: "SpAi-C's first single Gravi-tea arrives 31 July.",
+	link: "https://distrokid.com/hyperfollow/spaic/gravi-tea",
+	linkText: "🚀 Pre-save now",
     category: "Announcement"
-  },
-  {
-    date: "June 28, 2026",
-    title: "The Architecture of Sound",
-    excerpt: "A deep dive into the algorithmic processes used to generate the unique textures of the upcoming album.",
-    category: "Tech Deep Dive"
   }
 ];
 ---
@@ -31,8 +21,7 @@ const news = [
 		</header>
 
 		<div class="space-y-12">
-		<h2 class="text-2xl font-oxanium mb-4 group-hover:text-accent transition-colors">Coming soon...</h2>
-		<!--
+		<h2 class="text-2xl font-oxanium mb-4 group-hover:text-accent transition-colors">Coming 31 July...</h2>
 			{news.map((item) => (
 				<article class="group relative bg-white/5 border border-white/10 p-8 rounded-2xl hover:bg-white/[0.08] transition-all">
 					<div class="flex flex-col md:flex-row md:items-center justify-between mb-4 gap-2">
@@ -43,6 +32,7 @@ const news = [
 					<p class="text-white/60 font-inter leading-relaxed mb-6">
 						{item.excerpt}
 					</p>
+					{item.link && <a href={item.link}>{item.linkText}</a>}
 					<a href="#" class="inline-flex items-center text-sm font-oxanium uppercase tracking-widest text-white hover:text-accent transition-colors">
 						Read More 
 						<svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -51,7 +41,6 @@ const news = [
 					</a>
 				</article>
 			))}
-		-->
 		</div>
 	</section>
 </Layout>
