@@ -33,13 +33,23 @@ const news = [
 					<p class="text-white/60 font-inter leading-relaxed mb-6">
 						{item.excerpt}
 					</p>
-					{item.link && <p><a href={item.link}>{item.linkText}</a></p>}
-					<a href="#" class="inline-flex items-center text-sm font-oxanium uppercase tracking-widest text-white hover:text-accent transition-colors">
-						Read More 
-						<svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-						</svg>
+					{item.link && 
+					<div class="pt-4">
+					<a 
+						href={item.link}
+						class="inline-block bg-white text-space-black font-oxanium font-bold px-8 py-4 rounded-full hover:bg-accent hover:text-white transition-all transform hover:-translate-y-1 active:scale-95 tracking-widest uppercase text-sm"
+					>
+						{item.linkText}
 					</a>
+					</div>}
+					{readmore && <p>
+						<a href={item.readmore} class="inline-flex items-center text-sm font-oxanium uppercase tracking-widest text-white hover:text-accent transition-colors">
+							Read More 
+							<svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+							</svg>
+						</a>
+					</p>}
 				</article>
 			))}
 		</div>
