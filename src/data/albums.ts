@@ -24,10 +24,9 @@ export const albums: Album[] = [
     ],
     art: albumArt_gravitea,
     links: [
-      { name: "Spotify", url: "#" },
-      { name: "Apple Music", url: "#" },
-      { name: "Bandcamp", url: "#" },
-      { name: "YouTube Music", url: "#" }
+      { name: "Spotify", url: "https://open.spotify.com/track/3u3LnKdKLhqgMXXmGZYG26?si=c1a0fc5608b246a0" },
+      { name: "Apple Music", url: "https://music.apple.com/ca/song/gravi-tea/6793238854" },
+      { name: "YouTube Music", url: "https://youtu.be/OebVXQmDYGc?si=5LsViC5Phb8zx1Eg" }
     ]
   }
   /*{
