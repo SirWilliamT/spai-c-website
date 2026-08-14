@@ -34,7 +34,7 @@ export const albums: Album[] = [
     links: [
       { name: "Spotify", url: "https://open.spotify.com/album/0gSMfUP7O76bmCuu7b9cDz" },
       { name: "Apple Music", url: "https://music.apple.com/ca/album/escape-velocity/6797137106" },
-      { name: "YouTube Music", url: "https://www.youtube.com/@SpAi-C" }
+      { name: "YouTube Music", url: "https://www.youtube.com/@SpAi-C" },
       { name: "Amazon Music", url: "https://amazon.com/music/player/albums/B0HCK7TH1D?marketplaceId=ATVPDKIKX0DER&musicTerritory=US&ref=dm_sh_HslW6N8bmtJCnvLHeFXAUzylu" }
     ]
   },
