@@ -1,4 +1,4 @@
-//import albumArt_escapeVelocity from '../assets/escape-velocity.jpg';
+import albumArt_escapeVelocity from '../assets/escape-velocity.jpg';
 import albumArt_gravitea from '../assets/gravi-tea.jpg';
 
 export interface Album {
@@ -14,22 +14,6 @@ export interface Album {
 
 export const albums: Album[] = [
   {
-    id: "gravi-tea",
-    title: "Gravi-tea",
-    year: "2026",
-    type: "Single",
-    description: "Gravi-tea is the debut single from SpAi-C, introducing her blend of space-pop where everyday London life drifts effortlessly into the stars. It's a playful anthem about finding a moment of calm when life feels impossibly heavy, proving that sometimes all you need is a proper cup of tea—and a little imagination—to find your escape.",
-    tracklist: [
-      { title: "Gravi-tea", duration: "04:05" }
-    ],
-    art: albumArt_gravitea,
-    links: [
-      { name: "Spotify", url: "https://open.spotify.com/track/3u3LnKdKLhqgMXXmGZYG26?si=c1a0fc5608b246a0" },
-      { name: "Apple Music", url: "https://music.apple.com/ca/song/gravi-tea/6793238854" },
-      { name: "YouTube Music", url: "https://youtu.be/OebVXQmDYGc?si=5LsViC5Phb8zx1Eg" }
-    ]
-  }
-  /*{
     id: "escape-velocity",
     title: "Escape Velocity",
     year: "2026",
@@ -48,12 +32,27 @@ export const albums: Album[] = [
     ],
     art: albumArt_escapeVelocity,
     links: [
-      { name: "Spotify", url: "#" },
-      { name: "Apple Music", url: "#" },
-      { name: "Bandcamp", url: "#" },
-      { name: "YouTube Music", url: "#" }
+      { name: "Spotify", url: "https://open.spotify.com/album/0gSMfUP7O76bmCuu7b9cDz" },
+      { name: "Apple Music", url: "https://music.apple.com/ca/album/escape-velocity/6797137106" },
+      { name: "YouTube Music", url: "https://www.youtube.com/@SpAi-C" }
     ]
-  }*/
+  },
+  {
+    id: "gravi-tea",
+    title: "Gravi-tea",
+    year: "2026",
+    type: "Single",
+    description: "Gravi-tea is the debut single from SpAi-C, introducing her blend of space-pop where everyday London life drifts effortlessly into the stars. It's a playful anthem about finding a moment of calm when life feels impossibly heavy, proving that sometimes all you need is a proper cup of tea—and a little imagination—to find your escape.",
+    tracklist: [
+      { title: "Gravi-tea", duration: "04:05" }
+    ],
+    art: albumArt_gravitea,
+    links: [
+      { name: "Spotify", url: "https://open.spotify.com/track/3u3LnKdKLhqgMXXmGZYG26?si=c1a0fc5608b246a0" },
+      { name: "Apple Music", url: "https://music.apple.com/ca/song/gravi-tea/6793238854" },
+      { name: "YouTube Music", url: "https://youtu.be/OebVXQmDYGc?si=5LsViC5Phb8zx1Eg" }
+    ]
+  }
 ];
 
 export const latestAlbum = albums[0];
