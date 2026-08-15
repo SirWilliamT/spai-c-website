@@ -34,7 +34,7 @@ export const albums: Album[] = [
     links: [
       { name: "Spotify", url: "https://open.spotify.com/album/0gSMfUP7O76bmCuu7b9cDz" },
       { name: "Apple Music", url: "https://music.apple.com/ca/album/escape-velocity/6797137106" },
-      { name: "YouTube Music", url: "https://music.youtube.com/@SpAi-C" },
+      { name: "YouTube Music", url: "https://music.youtube.com/playlist?list=OLAK5uy_nuD6IiVKUkLbAu64tTJ2EipNmMf1dX_aY&si=2cDjjSlQch2AA4p-" },
       { name: "Amazon Music", url: "https://amazon.com/music/player/albums/B0HCK7TH1D?marketplaceId=ATVPDKIKX0DER&musicTerritory=US&ref=dm_sh_HslW6N8bmtJCnvLHeFXAUzylu" }
     ]
   },
@@ -51,7 +51,7 @@ export const albums: Album[] = [
     links: [
       { name: "Spotify", url: "https://open.spotify.com/track/3u3LnKdKLhqgMXXmGZYG26?si=c1a0fc5608b246a0" },
       { name: "Apple Music", url: "https://music.apple.com/ca/song/gravi-tea/6793238854" },
-      { name: "YouTube Music", url: "https://youtu.be/OebVXQmDYGc?si=5LsViC5Phb8zx1Eg" },
+      { name: "YouTube Music", url: "https://music.youtube.com/playlist?list=OLAK5uy_mrzysn7UAKYXO5QnRvtrFDWIRgTPFMxpg&si=zBYScCTzosZcl9aN" },
       { name: "Amazon Music", url: "https://amazon.com/music/player/albums/B0H9VCHG8G?marketplaceId=ATVPDKIKX0DER&musicTerritory=US&ref=dm_sh_PnjX9CNTzu6kmJkm4ACtgju27" }
     ]
   }
