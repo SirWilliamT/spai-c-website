@@ -35,13 +35,28 @@ const { title, description = "Official website of SpAi-C - Digital AI Music Arti
 					<li><a href="/contact" class="hover:text-accent transition-colors">Contact</a></li>
 				</ul>
 
-				<!-- Mobile Menu Button (Simplified for now) -->
-				<div class="md:hidden text-accent">
-					<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+				<button
+					id="mobile-menu-button"
+					type="button"
+					class="md:hidden p-2 -mr-2 text-accent hover:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
+					aria-expanded="false"
+					aria-controls="mobile-menu"
+					aria-label="Open navigation menu"
+				>
+					<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
 						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
 					</svg>
-				</div>
+				</button>
 			</nav>
+			<div id="mobile-menu" class="hidden md:hidden border-t border-white/10 bg-space-black/95 backdrop-blur-md">
+				<ul class="max-w-7xl mx-auto px-6 py-4 flex flex-col font-oxanium text-sm uppercase tracking-widest">
+					<li><a href="/" class="block py-3 hover:text-accent transition-colors">Home</a></li>
+					<li><a href="/news" class="block py-3 hover:text-accent transition-colors">Latest Transmission</a></li>
+					<li><a href="/discography" class="block py-3 hover:text-accent transition-colors">Discography</a></li>
+					<li><a href="/about" class="block py-3 hover:text-accent transition-colors">About</a></li>
+					<li><a href="/contact" class="block py-3 hover:text-accent transition-colors">Contact</a></li>
+				</ul>
+			</div>
 		</header>
 
 		<main class="pt-20">
@@ -68,5 +83,17 @@ const { title, description = "Official website of SpAi-C - Digital AI Music Arti
 				</div>
 			</div>
 		</footer>
+
+		<script>
+			const menuButton = document.querySelector<HTMLButtonElement>('#mobile-menu-button');
+			const mobileMenu = document.querySelector<HTMLElement>('#mobile-menu');
+
+			menuButton?.addEventListener('click', () => {
+				const isOpen = menuButton.getAttribute('aria-expanded') === 'true';
+				menuButton.setAttribute('aria-expanded', String(!isOpen));
+				menuButton.setAttribute('aria-label', isOpen ? 'Open navigation menu' : 'Close navigation menu');
+				mobileMenu?.classList.toggle('hidden', isOpen);
+			});
+		</script>
 	</body>
 </html>
